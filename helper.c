@@ -6,29 +6,29 @@ int CUSTOM_PUSH_VALUE;
 handle_opcode - interpret and execute the opcode
 @opcode: the opcode to be interpreted
 @stack: the head
-@line_num: line number
+@line_number: number of lines
 */
-void interpret_opcode(char *opcode, stack_t **stack, int line_num)
+void handle_opcode(char *opcode, stack_t **stack, int line_number)
 {
 if (strcmp(opcode, "push") == 0)
-perform_push(opcode, stack, line_num);
+pushing(opcode, stack, line_number);
 else if (strcmp(opcode, "pall") == 0)
-display_stack(stack, line_num);
+pall(stack, line_number);
 else if (strcmp(opcode, "nop") == 0)
-perform_nop(stack, line_num);
+_nop(stack, line_number);
 else if (strcmp(opcode, "swap") == 0)
-perform_swap(stack, line_num);
+_swap(stack, line_number);
 else if (strcmp(opcode, "pop") == 0)
-pop_from_stack(stack, line_num);
+pop_stack(stack, line_number);
 else if (strcmp(opcode, "pint") == 0)
-display_top(stack, line_num);
+_pint(stack, line_number);
 else if (strcmp(opcode, "add") == 0)
-perform_add(stack, line_num);
+_add(stack, line_number);
 else if (strcmp(opcode, "sub") == 0)
-perform_sub(stack, line_num);
+sub(stack, line_number);
 else
 {
-fprintf(stderr, "L%d: unknown instruction %s\n", line_num, opcode);
+fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 exit(EXIT_FAILURE);
 }
 }
