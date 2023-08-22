@@ -1,4 +1,5 @@
-include "monty.h"
+#include "monty.h"
+
 
 /**
 
@@ -15,7 +16,7 @@ int monty_main(int argc, char **argv)
 FILE *file;
 stack_t *stack = NULL;
 char buffer[1024];
-int line_num = 0;
+int line_number = 0;
 char *opcode;
 
 if (argc != 2)
@@ -33,12 +34,12 @@ exit(EXIT_FAILURE);
 
 while (fgets(buffer, 1024, file))
 {
-line_num++;
-instr = strtok(buffer, " \t\n");
-if (is_comment(instr, line_num) == 1)
+line_number++;
+opcode = strtok(buffer, " \t\n");
+if (is_comm(opcode, line_number) == 1)
 continue;
-if (instr)
-execute_instruction(instr, &stack, line_num);
+if (opcode)
+handle_opcode(opcode, &stack, line_number);
 }
 
 fclose(file);
