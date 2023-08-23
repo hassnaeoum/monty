@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * _swap - change between two nodes.
+ * _swap - swaps the top two elements of the stack.
  * @stack: head
- * @line: num of line.
+ * @line: line
  */
 void _swap(stack_t **stack, unsigned int line)
 {
