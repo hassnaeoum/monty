@@ -14,6 +14,6 @@ void pall(stack_t **stack, unsigned int line_number)
     while (curr)
     {
         printf("%d\n", curr->n);
-        current = curr->next;
+        curr = curr->next;
     }
 }

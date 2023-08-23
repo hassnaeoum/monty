@@ -1,20 +1,20 @@
 #include "monty.h"
 
 /**
- * _swap - chage between two nodes.
+ * _swap - change between two nodes.
  * @stack: head
  * @line: num of line.
  */
-void _swap(stack_t **stack, UINT line);
+void _swap(stack_t **stack, unsigned int line)
 {
-	int ptr;
+	int n;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
-		exit(EXIT_FAILURE)
+		exit(EXIT_FAILURE);
 	}
-	ptr = (stack)->ptr;
-	(stack)->ptr = (stack)->next->ptr;
-	(stack)->next->ptr = ptr
+	n = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = n;
 }
