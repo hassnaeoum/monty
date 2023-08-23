@@ -4,7 +4,7 @@
  * @stack: head
  * @line: line
  */
-void sub(stack_t **stack, uint line)
+void sub(stack_t **stack, unsigned int line)
 {
 	int sub;
 
@@ -22,7 +22,7 @@ void sub(stack_t **stack, uint line)
  * @stack: head
  * @line: line
  */
-void _add(stack_t **stack, uint line)
+void _add(stack_t **stack, unsigned int line)
 {
 	int sum;
 

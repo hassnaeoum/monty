@@ -4,7 +4,7 @@
  * @stack: head
  * @line: line
  */
-void pop_stack(stack_t **stack, uint line)
+void pop_stack(stack_t **stack, unsigned int line)
 {
 	stack_t *tmp;
 

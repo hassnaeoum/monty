@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define UINT unsigned int
+#define uint unsigned int
 
 extern int PUSH_VALUE;
 
@@ -19,11 +19,11 @@ extern int PUSH_VALUE;
  * for stack, queues, LIFO, FIFO
  */
 
-typedef struct stack_c
+typedef struct stack_s
 {
     int n;
-    struct stack_c *prev;
-    struct stack_c *next;
+    struct stack_s *prev;
+    struct stack_s *next;
 } stack_t;
 
 /**
@@ -35,21 +35,22 @@ typedef struct stack_c
  * for stack, queues, LIFO, FIFO
  */
 
-typedef struct Instruction
+typedef struct instruction_s
 {
     char *opcode;
-    void (*func)(stack_t **stack, UINT line_number);
-} Instruction_t;
+    void (*func)(stack_t **stack, unsigned int line_number);
+} instruction_t;
 
-void push(stack_t **stack, UINT line_number);
-void pall(stack_t **stack, UINT line_number);
-void _nop(stack_t **stack, UINT line);
-void _swap(stack_t **stack, UINT line);
-void _add(stack_t **stack, UINT line);
-void pop_stack(stack_t **stack, UINT line);
-void _pint(stack_t **stack, UINT line_number);
-void sub(stack_t **stack, UINT line);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line);
+void _swap(stack_t **stack, unsigned int line);
+void _add(stack_t **stack, uint line);
+void pop_stack(stack_t **stack, uint line);
+void _pint(stack_t **stack, unsigned int  line_number);
+void sub(stack_t **stack, uint line);
 
+/**main**/
 void handle_opcode(char *opcode, stack_t **stack, int line_number);
 int check_int(char *str);
 void pushing(char *opcode, stack_t **stack, int line_number);
